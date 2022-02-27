@@ -4,6 +4,9 @@ class Bowlingscore
     @roll = []
     @score = 0
   end 
+ 
+  def roll(points)
+    @roll.push points
+  end 
 
-  
 end
