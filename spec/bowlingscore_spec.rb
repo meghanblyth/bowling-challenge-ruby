@@ -10,5 +10,13 @@ describe Bowlingscore do
     end
   end
 
-  
+  it 'can roll a gutter game' do
+    20.times { @bowlingscore.roll(0) }
+    expect(@bowlingscore.score).to eq(0)
+  end
+
+  it 'can roll all ones' do
+    20.times { @bowlingscore.roll(1) }
+    expect(@bowlingscore.score).to eq(20)
+  end
 end
