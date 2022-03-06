@@ -1,14 +1,16 @@
 class Bowlingscore
-
-  attr_reader :total 
+  attr_reader :total, :rolls
 
   def initialize
     @total = 0
-  end 
- 
-  def roll(pin)
-    pin 
-    @total += pin 
-  end 
+    @rolls = []
+  end
 
-end 
+  def roll(pin)
+    @total += pin
+  end
+
+  def frame
+    2
+  end
+end
