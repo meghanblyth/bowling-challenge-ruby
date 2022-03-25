@@ -11,6 +11,19 @@ class Bowlingscore
   end
 
   def frame
-    2
+    roll = 0
+    while roll < 2
+      roll += 1
+    end 
+    return roll 
   end
+
+  def game(frame)
+    frame = 0 
+    while frame < 10 
+      frame += 1
+    end 
+    return frame   
+  end 
+
 end

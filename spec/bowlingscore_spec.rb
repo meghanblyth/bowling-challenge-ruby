@@ -5,17 +5,6 @@ describe Bowlingscore do
   let(:bowlingscore) { described_class.new }
 
   describe '#roll' do
-    it 'returns 5 if you roll 5' do
-      expect(bowlingscore.roll(5)).to eq 5
-    end
-
-    it 'returns 7 if you roll 7' do
-      expect(bowlingscore.roll(7)).to eq 7
-    end
-
-    it 'returns the number of pins that were knocked down' do
-      expect(bowlingscore.roll(6)).to eq 6
-    end
 
     it 'adds pin to the score total' do
       expect { bowlingscore.roll(8) }.to change { bowlingscore.total }.by 8
@@ -35,9 +24,35 @@ describe Bowlingscore do
     end
   end
 
+  describe '#perfectgame' do
+    it 'has a total score of three hundred' do
+      bowlingscore.roll(300)
+      expect(bowlingscore.total).to eq 300
+    end 
+  end 
+
   describe '#frame' do
     it 'has two rolls' do
       expect(bowlingscore.frame).to eq 2
     end
   end
+
+  describe '#game' do 
+    it 'has ten frames' do 
+      expect(bowlingscore.game(10)).to eq 10 
+    end 
+  end 
+
+  # descrobe '#strike' do 
+  #   it '' do 
+  #     expect
+  #   end 
+  # end 
+
+  # descrobe '#spare' do 
+  #   it '' do 
+  #     expect
+  #   end 
+  # end 
+
 end
